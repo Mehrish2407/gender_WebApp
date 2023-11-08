@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block bodyblock %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <br><br>
+            <!-- form: upload the image -->
+            <h3 class="display-8">Gender Classification</h3>
+            <p> Upload an Image (.jpg, .jpeg, .png), Our Model will
+                detect face and then predict gender based on face (Male or Female)
+            </p>
+            <!-- upload image form -->
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <input type="file" class="form-control" name="image_name" required>
+                    <input type="submit" value="Upload & Predict" class="btn btn-outline-primary" style="background-color:#7851a9; border-color: #7851a9; color: #fff;">
+                </div>
+            </form>
+
+
+        </div>
+        <div class="col-8">
+            <!-- report: predicted image and report(grayscale, eigen image, score) -->
+            {% if fileupload %} 
+            <br><br>
+            <!-- predicted image -->
+            <h3 class="display-8">Predicted Image</h3>
+            <img src="/static/predict/prediction_img.jpg" class="image-fluid" width="500" height="500" alt="">
+
+            <!-- reporting -->
+            <hr>
+            <br>
+            <table class="table table-hover table-striped">
+                <tr>
+                    <th>
+                        Detected Face
+                    </th>
+                    <th>Eigen Image</th>
+                    <th>Prediction Gender</th>
+                    <th>score</th>
+                </tr>
+                {% for element in report %}
+                    <tr>
+                        <td>
+                            <img src="/static/predict/{{element[0] }}" class="image-fluid" height="100" alt="">
+                        </td>
+                        <td>
+                            <img src="/static/predict/{{element[1] }}" class="image-fluid" height="100" alt="">
+                        </td>
+                        <td> {{element[2] }} </td>
+                        <td> {{element[3] }} </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock bodyblock %}
+
+
+
+ 
+
+

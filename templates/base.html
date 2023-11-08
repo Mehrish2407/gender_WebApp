@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition WebApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        .custom-div {
+            height: 700px; /* Set the height to 200 pixels */
+            background-color: rgb(250, 254, 255); /* Just for visualization */
+        }
+    </style>
+</head>
+<body>
+   <!-- Nav bar -->
+   <!-- Royal purple:#7851a9 -->
+   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#7851a9;">
+        <div class="container">
+            <!-- logo -->
+            <a class="navbar-brand" href="/">
+                <img src="/static/images/facerecognition.png" width="75" height="75" alt="">
+                Face Recognition
+            </a>
+
+            <!-- items -->
+            <div class="collapse navbar-collapse">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/">Home</a>
+                    <a class="nav-item nav-link" href="/app/">App</a>
+
+                </div>
+            </div>
+        </div>
+   </nav>
+
+   <!-- template inheritance -->
+   
+   
+    {% block bodyblock %}
+
+    {% endblock %}
+   
+  
+</body>
+
+</html>
